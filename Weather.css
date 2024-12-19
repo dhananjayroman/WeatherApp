@@ -1,0 +1,185 @@
+/* Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: #000000;  /* Set global text color to black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Background Animation */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    animation: bgAnimation 8s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes bgAnimation {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.box {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    padding: 40px 30px;
+    text-align: center;
+    max-width: 320px;
+    width: 100%;
+    animation: fadeIn 1.5s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.weathercondition i {
+    font-size: 80px;
+    animation: weatherBounce 2s infinite;
+}
+
+.info {
+    color: #000000 !important;  /* Ensures all text inside .info is black */
+}
+
+.info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #000000;  /* Explicitly make it black */
+}
+
+.info p {
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #000000 !important;  /* Ensure paragraph text is black */
+}
+
+.temperature {
+    font-size: 60px;
+    font-weight: 700;
+    margin: 20px 0;
+    color: #000000;  /* Explicitly make it black */
+    transition: 0.3s ease-in-out;
+}
+
+.temp_minmax {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000 !important;  /* Make sure min-max temp is black */
+}
+
+.weathercondition i.sun {
+    color: #ffcc00;
+}
+
+.weathercondition i.cloud {
+    color: #b0bec5;
+}
+
+.weathercondition i.rain {
+    color: #00bcd4;
+}
+
+@keyframes weatherBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.sun-animation {
+    animation: sunRotation 10s linear infinite;
+}
+
+.cloud-animation {
+    animation: cloudFloat 10s ease-in-out infinite;
+}
+
+.rain-animation {
+    animation: rainFall 1s linear infinite;
+}
+
+@keyframes sunRotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes cloudFloat {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
+
+@keyframes rainFall {
+    0% {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(10px);
+        opacity: 1;
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .box {
+        padding: 20px 15px;
+    }
+
+    .temperature {
+        font-size: 50px;
+    }
+
+    .info h2 {
+        font-size: 20px;
+    }
+
+    .info p, .temp_minmax {
+        font-size: 16px;
+    }
+
+    .weathercondition i {
+        font-size: 60px;
+    }
+}
+

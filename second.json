@@ -1,0 +1,46 @@
+
+
+{
+    "coord": {
+        "lon": 73.8434,
+        "lat": 18.1486
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 300.53,
+        "feels_like": 301.99,
+        "temp_min": 300.53,
+        "temp_max": 300.53,
+        "pressure": 1010,
+        "humidity": 63,
+        "sea_level": 1010,
+        "grnd_level": 914
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 0.89,
+        "deg": 355,
+        "gust": 1.47
+    },
+    "clouds": {
+        "all": 61
+    },
+    "dt": 1715959693,
+    "sys": {
+        "country": "IN",
+        "sunrise": 1715905855,
+        "sunset": 1715952681
+    },
+    "timezone": 19800,
+    "id": 1275836,
+    "name": "Bhor",
+    "cod": 200
+}
